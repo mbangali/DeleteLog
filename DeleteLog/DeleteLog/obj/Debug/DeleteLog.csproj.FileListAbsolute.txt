@@ -1,0 +1,7 @@
+D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe.config
+D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.pdb
+D:\D\wcf\DeleteLog\DeleteLog\obj\Debug\DeleteLog.ProjectInstaller.resources
+D:\D\wcf\DeleteLog\DeleteLog\obj\Debug\DeleteLog.csproj.GenerateResource.Cache
+D:\D\wcf\DeleteLog\DeleteLog\obj\Debug\DeleteLog.exe
+D:\D\wcf\DeleteLog\DeleteLog\obj\Debug\DeleteLog.pdb
