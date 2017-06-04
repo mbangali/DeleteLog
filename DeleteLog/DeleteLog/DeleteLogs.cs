@@ -13,9 +13,11 @@ namespace DeleteLog
 {
     public partial class DeleteLogs : ServiceBase
     {
-        System.Timers.Timer objTimer = new System.Timers.Timer(60000);
-        private static string[] path = ConfigurationSettings.AppSettings["LogFilePath"].ToString().Split(',');
-        private static int Duration = Convert.ToInt32(ConfigurationSettings.AppSettings["LogDuration"]);
+        System.Timers.Timer objTimer = new System.Timers.Timer();
+        string[] path = ConfigurationSettings.AppSettings["LogFilePath"].ToString().Split(',');
+        int Duration = Convert.ToInt32(ConfigurationSettings.AppSettings["LogDuration"]);
+        int Interval = Convert.ToInt32(ConfigurationSettings.AppSettings["interval"]);
+
         public DeleteLogs()
         {
             InitializeComponent();
@@ -23,8 +25,9 @@ namespace DeleteLog
 
         protected override void OnStart(string[] args)
         {
-            
+
             objTimer.Enabled = true;
+            objTimer.Interval = Interval;
             objTimer.Elapsed += objTimer_Elapsed;
             objTimer.Enabled = true;
             objTimer.Start();
@@ -34,7 +37,8 @@ namespace DeleteLog
         {
             lock (this)
             {
-                Task objTask = new Task(()=>LogDeleter());               
+                Task objTask = new Task(() => LogDeleter());
+                objTask.Start();
             }
         }
 
@@ -46,22 +50,23 @@ namespace DeleteLog
                 {
                     string[] directoryPath = null;
                     string[] subDirectoryPath = null;
-                    directoryPath = Directory.GetDirectories(strPath);
-                    foreach (var strDirectoryPath in directoryPath)
+                    if (Directory.Exists(strPath))
                     {
-                        subDirectoryPath = Directory.GetDirectories(strPath);
-                        string[] filePath = Directory.GetFiles(strDirectoryPath, "*.txt");
-                        foreach (string strFilePath in filePath)
+                        directoryPath = Directory.GetDirectories(strPath);
+                        foreach (var strDirectoryPath in directoryPath)
                         {
-
-                            FileInfo objFileInfo = new FileInfo(strFilePath);
-                            if (DateTime.Now.Day - objFileInfo.LastWriteTime.Day == Duration)
+                            subDirectoryPath = Directory.GetDirectories(strPath);
+                            string[] filePath = Directory.GetFiles(strDirectoryPath, "*.txt");
+                            foreach (string strFilePath in filePath)
                             {
-                                File.Delete(strFilePath);
+                                FileInfo objFileInfo = new FileInfo(strFilePath);
+                                if (DateTime.Now.Day - objFileInfo.LastWriteTime.Day == Duration)
+                                {
+                                    File.Delete(strFilePath);
+                                }
                             }
                         }
                     }
-
                 }
             }
             catch (Exception ex)
@@ -69,7 +74,7 @@ namespace DeleteLog
 
                 throw;
             }
-            
+
         }
 
         protected override void OnStop()

@@ -69,3 +69,42 @@ Affected parameters are:
    logtoconsole = 
    logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
    assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Installing assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Installing service DeleteLogs...
+Creating EventLog source DeleteLogs in log Application...
+Rolling back assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Restoring event log to previous state for source DeleteLogs.
+Installing assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Installing service DeleteLogs...
+Creating EventLog source DeleteLogs in log Application...
+Rolling back assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Restoring event log to previous state for source DeleteLogs.
+Installing assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe
+Installing service DeleteLogs...
+Service DeleteLogs has been successfully installed.
+Creating EventLog source DeleteLogs in log Application...
+Committing assembly 'D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.InstallLog
+   assemblypath = D:\D\wcf\DeleteLog\DeleteLog\bin\Debug\DeleteLog.exe

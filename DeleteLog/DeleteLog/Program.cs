@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace DeleteLog
 {
     static class Program
@@ -14,12 +14,23 @@ namespace DeleteLog
         /// </summary>
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
+            try
+            {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[] 
             { 
                 new DeleteLogs() 
             };
-            ServiceBase.Run(ServicesToRun);
+                ServiceBase.Run(ServicesToRun);
+            }
+            catch (Exception ex)
+            {
+                
+               StreamWriter sm = new StreamWriter(@"C:\log.txt");
+                sm.WriteLine( ex.ToString());
+               
+            }
+            
         }
     }
 }
